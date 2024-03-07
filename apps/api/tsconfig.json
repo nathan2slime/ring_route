@@ -14,9 +14,11 @@
   },
   "include": [
     "main.ts",
+    "jest.config.json",
     "./src/**/*.ts"
   ],
   "exclude": [
+    "coverage",
     "node_modules"
-  ]
+  ],
 }
