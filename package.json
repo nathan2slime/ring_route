@@ -52,6 +52,5 @@
   },
   "installConfig": {
     "hoistingLimits": "none"
-  },
-  "packageManager": "yarn@4.1.0"
+  }
 }
