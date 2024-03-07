@@ -1,5 +1,3 @@
-CREATE DATABASE clients;
-
 CREATE TABLE clients
 (
     id         SERIAL PRIMARY KEY NOT NULL,
@@ -10,21 +8,19 @@ CREATE TABLE clients
     deleted_at TIMESTAMPTZ
 );
 
-CREATE TABLE addresses
+CREATE TABLE locations
 (
     id         SERIAL PRIMARY KEY NOT NULL,
-    street     VARCHAR(255)       NOT NULL,
-    city       VARCHAR(255)       NOT NULL,
-    state      VARCHAR(255)       NOT NULL,
-    zip_code   VARCHAR(10)        NOT NULL,
+    latitude   NUMERIC(10, 8)     NOT NULL,
+    longitude  NUMERIC(11, 8)     NOT NULL,
     created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
     deleted_at TIMESTAMPTZ
 );
 
 ALTER TABLE clients
     ADD COLUMN updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE addresses
+ALTER TABLE locations
     ADD COLUMN updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP;
-ALTER TABLE clients
-    ADD COLUMN address_id INT UNIQUE REFERENCES addresses (id) ON DELETE CASCADE;
+
+ALTER TABLE clients ADD COLUMN location_id INT UNIQUE REFERENCES locations (id) ON DELETE CASCADE;
 

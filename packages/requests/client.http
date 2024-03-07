@@ -1,0 +1,9 @@
+POST {{API_URL}}/clients/new
+Content-Type: application/json
+
+{
+  "name": "Example",
+  "phone": "99988095963",
+  "email": "example@gmail.com"
+}
+

@@ -6,8 +6,6 @@
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
-    "resolvePackageJsonExports": true,
-    "resolvePackageJsonImports": true,
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
     "strictPropertyInitialization": false,
