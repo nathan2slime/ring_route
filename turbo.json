@@ -1,0 +1,38 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalDotEnv": [".env", ".env.prod"],
+  "pipeline": {
+    "build": {
+      "cache": false,
+      "dependsOn": ["^build"],
+      "dotEnv": [
+        ".env.test",
+        ".env.prod",
+        ".env"
+      ],
+      "outputs": ["./dist/**"]
+    },
+    "start": {
+      "cache": false
+    },
+    "seed": {
+      "cache": false
+    },
+    "test": {
+      "cache": false
+    },
+    "prod": {
+      "cache": false
+    },
+    "test:cov": {
+      "cache": false
+    },
+    "test:e2e": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false
+    }
+  }
+}
