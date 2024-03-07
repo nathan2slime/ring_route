@@ -7,11 +7,23 @@
     "apps/**",
     "packages/**"
   ],
+  "scripts": {
+    "dev": "dotenv -- turbo run dev",
+    "build": "dotenv -- turbo run build",
+    "test": "dotenv -- turbo run test",
+    "clean": "rm -rf node_modules",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "commit": "git-cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathan2slime/clp_clients.git"
+  },
   "devDependencies": {
+    "@clp/tsconfig": "*",
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",
     "@types/node": "^20.11.22",
-    "@vtr/tsconfig": "*",
     "axios": "^1.6.7",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
