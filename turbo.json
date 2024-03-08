@@ -31,6 +31,9 @@
     "test:e2e": {
       "cache": false
     },
+    "migration": {
+      "cache": false
+    },
     "dev": {
       "cache": false
     }

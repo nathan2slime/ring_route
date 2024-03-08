@@ -12,4 +12,6 @@ export type NewClient = z.infer<typeof client.new>;
 export type Client = NewClient & {
   id: string;
   created_at: Date;
+  updated_at: Date;
+  deleted_at: Date | null;
 };

@@ -13,6 +13,7 @@
     "test": "dotenv -- turbo run test",
     "test:cov": "dotenv -- turbo run test:cov",
     "test:e2e": "dotenv -- turbo run test:e2e",
+    "migration": "dotenv -- turbo run migration",
     "clean": "rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "commit": "git-cz"
