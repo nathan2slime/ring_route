@@ -1,40 +1,37 @@
-import { ClientRepository } from '@/repositories/client.repository';
+import { LocationRepository } from '@/repositories/location.repository';
 
-import { Client, NewClientEntity } from '@/schemas/types/client.type';
+import { Location, NewLocation } from '@/schemas/types/location.type';
 
 import { db } from '@/database';
 
-describe('ClientRepository', () => {
+describe('LocationRepository', () => {
   describe('create', () => {
     afterEach(() => {
       jest.clearAllMocks();
     });
 
-    const newClient: NewClientEntity = {
-      email: expect.any(String),
-      phone: expect.any(String),
-      name: expect.any(String),
-      location_id: expect.any(Number),
+    const newLocation: NewLocation = {
+      longitude: expect.any(Number),
+      latitude: expect.any(Number),
     };
 
-    const client: Client = {
-      ...newClient,
+    const location: Location = {
+      ...newLocation,
       id: expect.any(Number),
       created_at: expect.any(Date),
       updated_at: expect.any(Date),
-      location: null,
       deleted_at: null,
     };
 
-    it('should create and return user', async () => {
+    it('should create and return location', async () => {
       jest.spyOn(db, 'query').mockImplementation(() => ({
-        rows: [client],
+        rows: [location],
       }));
 
-      const clientRepository = new ClientRepository();
-      const res = await clientRepository.create(newClient);
+      const locationRepository = new LocationRepository();
+      const res = await locationRepository.create(newLocation);
 
-      expect(res).toEqual(client);
+      expect(res).toEqual(location);
       expect(db.query).toHaveBeenCalled();
       expect(db.query).toHaveBeenCalledTimes(1);
     });
@@ -46,10 +43,10 @@ describe('ClientRepository', () => {
         throw new Error(error);
       });
 
-      const clientRepository = new ClientRepository();
+      const locationRepository = new LocationRepository();
 
       try {
-        await clientRepository.create(newClient);
+        await locationRepository.create(newLocation);
 
         expect(false).toBe(true);
       } catch (e) {
