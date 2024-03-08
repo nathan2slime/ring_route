@@ -4,6 +4,8 @@ Content-Type: application/json
 {
   "name": "Example",
   "phone": "99988095963",
+  "longitude": -9.142685,
+  "latitude": 38.736946,
   "email": "example@gmail.com"
 }
 

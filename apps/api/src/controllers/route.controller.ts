@@ -3,18 +3,13 @@ import { Request, Response } from 'express';
 import { ClientService } from '@/services/client.service';
 
 import { logger } from '@/logger';
-import { schemas } from '@/schemas';
 
-export class ClientController {
-  async create(req: Request, res: Response) {
+export class RouteController {
+  async generate(req: Request, res: Response) {
     try {
-      const body = schemas.client.new.parse(req.body);
-
       const clientService = new ClientService();
 
-      const data = await clientService.create(body);
-
-      return res.status(201).json({ data });
+      const clients = await clientService.getWithLocation();
     } catch (error) {
       logger.error(error);
 

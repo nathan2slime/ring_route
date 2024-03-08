@@ -1,6 +1,6 @@
 import { ClientService } from '@/services/client.service';
 import { ClientRepository } from '@/repositories/client.repository';
-import { Client, NewClient } from '@/schemas/client.schema';
+import { Client, NewClientPayload } from '@/schemas/types/client.type';
 
 describe('ClientService', () => {
   describe('create', () => {
@@ -8,17 +8,21 @@ describe('ClientService', () => {
       jest.clearAllMocks();
     });
 
-    const newClient: NewClient = {
+    const newClient: NewClientPayload = {
       email: expect.any(String),
       phone: expect.any(String),
       name: expect.any(String),
+      latitude: expect.any(Number),
+      longitude: expect.any(Number),
     };
 
     const client: Client = {
       ...newClient,
-      id: expect.any(Number),
       created_at: expect.any(Date),
       updated_at: expect.any(Date),
+      location_id: expect.any(Number),
+      id: expect.any(Number),
+      location: null,
       deleted_at: null,
     };
 
