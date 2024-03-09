@@ -9,13 +9,14 @@
     "build": "tsup && tsc-alias",
     "test:watch": "jest --watch",
     "prod": "node dist/main.js",
-    "migration":"ts-node-dev -r tsconfig-paths/register ./src/database/migrations/index.ts",
+    "migration": "ts-node-dev -r tsconfig-paths/register ./dist/src/database/migrations/index.js",
     "test": "jest  --runInBand --config jest.config.json --verbose",
     "test:cov": "jest --coverage --verbose --config jest.config.json",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config e2e/jest-e2e.json --detectOpenHandles"
   },
   "dependencies": {
+    "@clp/tsconfig": "*",
     "bunyan": "^1.8.15",
     "express": "^4.18.3",
     "pg": "^8.11.3",
@@ -32,6 +33,7 @@
     "ts-node-dev": "^2.0.0",
     "tsc-alias": "^1.8.8",
     "tsconfig-paths": "^4.2.0",
-    "tsup": "^8.0.2"
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
   }
 }
