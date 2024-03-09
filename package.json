@@ -56,6 +56,5 @@
   "installConfig": {
     "hoistingLimits": "none"
   },
-  "license": "MIT",
-  "packageManager": "yarn@4.1.1"
+  "license": "MIT"
 }
