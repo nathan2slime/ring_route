@@ -21,5 +21,7 @@ export default defineConfig({
     '.json': 'file',
   },
   tsconfig: 'tsconfig.json',
+  noExternal: ['@clp/types'],
+  external: [],
   clean: true,
 });

@@ -21,7 +21,7 @@ const fonts = Baloo_2({
 
 const RootLayout = ({ children }: Readonly<AppChildren>) => {
   return (
-    <html lang="en" className={classNames('dark', fonts.className)}>
+    <html lang="en" className={classNames(fonts.className, 'dark')}>
       <body>
         <Providers>
           <Layout>{children}</Layout>

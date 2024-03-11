@@ -8,7 +8,7 @@ WORKDIR /app
 RUN yarn global add turbo
 RUN yarn global add dotenv-cli
 COPY . .
-RUN turbo prune @cpl/web --docker
+RUN turbo prune @clp/web --docker
 
 FROM base AS installer
 RUN apk add --no-cache libc6-compat
@@ -22,7 +22,7 @@ COPY --from=builder /app/out/yarn.lock ./yarn.lock
 RUN yarn install
 
 COPY --from=builder /app/out/full/ .
-RUN yarn dotenv -- yarn turbo build --filter=@cpl/web...
+RUN yarn dotenv -- yarn turbo build --filter=@clp/web...
 
 FROM base AS runner
 WORKDIR /app

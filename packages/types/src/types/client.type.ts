@@ -1,8 +1,8 @@
 import { z } from 'zod';
 
-import { client } from '@/schemas/client.schema';
-import { Location } from '@/schemas/types/location.type';
-import { BaseEntity } from '@/schemas/types/index';
+import { client } from '@/client.schema';
+import { Location } from '@/types/location.type';
+import { BaseEntity } from '@/types/index';
 
 export type NewClientPayload = z.infer<typeof client.new>;
 export type NewClientEntity = Omit<

@@ -10,6 +10,8 @@ export class RouteController {
       const clientService = new ClientService();
 
       const clients = await clientService.getWithLocation();
+
+      return res.status(200).json(clients);
     } catch (error) {
       logger.error(error);
 

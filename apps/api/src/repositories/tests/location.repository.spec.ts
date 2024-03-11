@@ -1,6 +1,6 @@
 import { LocationRepository } from '@/repositories/location.repository';
 
-import { Location, NewLocation } from '@/schemas/types/location.type';
+import { Location, NewLocation } from '@clp/types';
 
 import { db } from '@/database';
 

@@ -1,7 +1,7 @@
 import { ClientRepository } from '@/repositories/client.repository';
 import { LocationRepository } from '@/repositories/location.repository';
 
-import { Client, NewClientPayload } from '@/schemas/types/client.type';
+import { Client, NewClientPayload } from '@clp/types';
 
 export class ClientService {
   async create({

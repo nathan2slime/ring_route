@@ -1,4 +1,4 @@
-import { ClientEntity, NewClientEntity } from '@/schemas/types/client.type';
+import { ClientEntity, NewClientEntity } from '@clp/types';
 
 import { db } from '@/database';
 
@@ -6,7 +6,7 @@ export class ClientRepository {
   async create(payload: NewClientEntity) {
     try {
       const res = await db.query<ClientEntity, string[]>(
-        'INSERT INTO clients(name, phone, email, location_id) VALUES ($1,$2,$3,$4) RETURNING *',
+        'INSERT INTO clients(name, email, phone, location_id) VALUES ($1,$2,$3,$4) RETURNING *',
         [payload.name, payload.email, payload.phone, payload.location_id],
       );
 

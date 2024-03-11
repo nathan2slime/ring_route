@@ -9,7 +9,7 @@
     "build": "tsup && tsc-alias",
     "test:watch": "jest --watch",
     "prod": "node dist/main.js",
-    "migration": "ts-node-dev -r tsconfig-paths/register ./dist/src/database/migrations/index.js",
+    "migration": "node ./dist/src/database/migrations/index.js",
     "test": "jest  --runInBand --config jest.config.json --verbose",
     "test:cov": "jest --coverage --verbose --config jest.config.json",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
@@ -20,10 +20,12 @@
     "bunyan": "^1.8.15",
     "express": "^4.18.3",
     "pg": "^8.11.3",
+    "@clp/types": "*",
     "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.11",
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
     "@types/pg": "^8.11.2",

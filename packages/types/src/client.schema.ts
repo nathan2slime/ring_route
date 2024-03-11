@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { location } from '@/schemas/location.schema';
+import { location } from '@/location.schema';
 
 export const client = {
   new: z

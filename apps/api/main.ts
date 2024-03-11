@@ -1,5 +1,6 @@
 import express, { json } from 'express';
 import * as process from 'process';
+import cors from 'cors';
 
 import { connectDatabase } from '@/database';
 import { router } from '@/routes';
@@ -11,6 +12,7 @@ connectDatabase();
 
 const app = express();
 
+app.use(cors());
 app.use(json());
 app.use('/api', router);
 
