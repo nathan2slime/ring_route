@@ -11,8 +11,9 @@ import { logger } from '@/logger';
     const db = new Client(config);
 
     await db.connect();
-
-    const query = fs.readFileSync(path.join(__dirname, './up.sql'), 'utf-8');
+    const isProd = process.env.NODE_ENV == 'production';
+    const sql = isProd ? require('./up').default : './up.sql';
+    const query = fs.readFileSync(path.join(__dirname, sql), 'utf-8');
 
     await db.query(query);
     await db.end();

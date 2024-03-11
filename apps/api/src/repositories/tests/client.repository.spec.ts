@@ -1,6 +1,6 @@
 import { ClientRepository } from '@/repositories/client.repository';
 
-import { Client, NewClientEntity } from '@/schemas/types/client.type';
+import { Client, NewClientEntity } from '@clp/types';
 
 import { db } from '@/database';
 

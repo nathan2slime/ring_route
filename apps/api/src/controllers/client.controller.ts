@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
+import { schemas } from '@clp/types';
 
 import { ClientService } from '@/services/client.service';
 
 import { logger } from '@/logger';
-import { schemas } from '@/schemas';
 
 export class ClientController {
   async create(req: Request, res: Response) {
@@ -14,7 +14,7 @@ export class ClientController {
 
       const data = await clientService.create(body);
 
-      return res.status(201).json({ data });
+      return res.status(201).json(data);
     } catch (error) {
       logger.error(error);
 

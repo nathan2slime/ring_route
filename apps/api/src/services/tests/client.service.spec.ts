@@ -1,8 +1,8 @@
+import { Location, NewLocation, Client, NewClientPayload } from '@clp/types';
+
 import { ClientService } from '@/services/client.service';
 import { ClientRepository } from '@/repositories/client.repository';
-import { Client, NewClientPayload } from '@/schemas/types/client.type';
 import { LocationRepository } from '@/repositories/location.repository';
-import { Location, NewLocation } from '@/schemas/types/location.type';
 
 describe('ClientService', () => {
   describe('create', () => {

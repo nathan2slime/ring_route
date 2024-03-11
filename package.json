@@ -4,12 +4,13 @@
   "private": true,
   "version": "0.0.1",
   "workspaces": [
-    "apps/**",
-    "packages/**"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "dev": "dotenv -- turbo run dev",
     "build": "dotenv -- turbo run build",
+    "prod": "dotenv -- turbo run prod",
     "test": "dotenv -- turbo run test",
     "test:cov": "dotenv -- turbo run test:cov",
     "test:e2e": "dotenv -- turbo run test:e2e",

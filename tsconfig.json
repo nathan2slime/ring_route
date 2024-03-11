@@ -1,0 +1,3 @@
+{
+  "extends": "@clp/tsconfig/base.json"
+}
